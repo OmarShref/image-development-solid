@@ -1,0 +1,112 @@
+/* dark blue : #23326b
+beg : #cfaf5c */
+
+.contactus {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.contactus::before {
+  content: "";
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 70px;
+  height: 70px;
+  border: 3px solid #cfaf5c;
+  background-color: #23326b;
+  position: absolute;
+  z-index: -1;
+  animation: contactus-background-animation 24s linear 0s infinite alternate
+    both;
+}
+@keyframes contactus-background-animation {
+  from {
+    top: 10%;
+    left: 10%;
+    transform: rotateZ(0deg);
+  }
+  to {
+    top: 80%;
+    left: 80%;
+    transform: rotateZ(360deg);
+  }
+}
+
+.contactus .contents {
+  position: relative;
+  margin: 60px 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  direction: var(--text-direction);
+  border-radius: 10px;
+  padding: 20px 30px;
+  background-color: rgba(250, 250, 250, 0.5);
+  backdrop-filter: blur(3px);
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.2);
+}
+.contactus .contents a {
+  min-width: 50%;
+  text-decoration: none;
+  display: block;
+}
+.contactus .contents p {
+  color: #23326b;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 25px 0;
+  transition: 0.2s ease;
+  -webkit-transition: 0.2s ease;
+  -moz-transition: 0.2s ease;
+  -ms-transition: 0.2s ease;
+  -o-transition: 0.2s ease;
+}
+.contactus .contents p:hover {
+  color: #cfaf5c;
+}
+
+@media only screen and (max-width: 650px) {
+  .contactus .contents {
+    margin: 60px 30px;
+  }
+  .contactus .contents a {
+    width: 100%;
+  }
+  .contactus .contents p {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 651px) and (max-width: 850px) {
+  .contactus .contents a {
+    width: 100%;
+  }
+  .contactus .contents p {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}
+
+/* Medium devices (landscape tablets, 800px and up) */
+@media only screen and (min-width: 851px) and (max-width: 991px) {
+  .contactus .contents p {
+    font-size: 18px;
+    padding: 20px 0;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1260px) {
+  .contactus .contents p {
+    font-size: 18px;
+    padding: 20px 0;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+}

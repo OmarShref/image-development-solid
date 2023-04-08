@@ -1,0 +1,37 @@
+/* dark blue : #23326b
+beg : #cfaf5c */
+
+.footer {
+  background-color: #23326b;
+  border-top: 3px solid #cfaf5c;
+  border-bottom: 3px solid #cfaf5c;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footer_contents {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer .footer_contents i {
+  font-size: 30px;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.footer .footer_contents i:hover {
+  color: #cfaf5c;
+}
+
+@media only screen and (max-width: 850px) {
+  .footer .footer_contents i:hover {
+    color: white;
+  }
+  .footer .footer_contents i:active {
+    color: #cfaf5c;
+  }
+}
