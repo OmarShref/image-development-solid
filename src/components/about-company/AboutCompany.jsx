@@ -1,13 +1,8 @@
 import "./AboutCompany.css";
 import { createEffect } from "solid-js";
 import { isEnglish } from "../navbar/Navbar";
-import aboutCompany1 from "../../assets/about-company-1.jpeg";
-import project2 from "../../assets/project-2.jpg";
-import project3 from "../../assets/project-3.jpeg";
-import project4 from "../../assets/project-4.jpeg";
-import project5 from "../../assets/project-5.jpeg";
-import project6 from "../../assets/project-6.jpeg";
-import octoperMall from "../../assets/octoper-mall.jpg";
+import { projects, currentIndex } from "../our-projects/OurProjects";
+
 import logo from "../../assets/logo.png";
 
 const AboutCompany = () => {
@@ -24,38 +19,6 @@ const AboutCompany = () => {
       "هي شركة مساهمة مصرية يرئسها <span>م / حسن عبدالوهاب</span> والعضو المنتدب <span>م / أيمن عبد الحي جماز</span> وقد أنشأت الشركة للقيام بأعمال التنمية والتطوير من خلال إنشاء المولات التجارية وتطوير المنشات القائمة ( فيلات - مباني إدارية ) من أجل رفع قيمة العقار وذلك بإنشاء وحدات عقارية ناجحة تتناسب مع إحتياجات المجتمع وتلبي جميع الأذواق",
     ],
   };
-  const projects = [
-    {
-      name: ["Image Mall", "مول إيميج"],
-      image: octoperMall,
-    },
-    {
-      name: ["Jannet masr ElSheikh Zayed", "جنة مصر بالشيخ زايد"],
-      image: aboutCompany1,
-    },
-    {
-      name: [
-        "AlEskan ALEgtmaey ElSheikh Zayed",
-        "الإسكان الإجتماعي بالشيخ زايد",
-      ],
-      image: project2,
-    },
-    { name: ["Swary Alex", "صواري بالإسكندرية"], image: project3 },
-    {
-      name: [
-        "Mogamaa AlSenaat ElSheikh Zayed",
-        "مجمع الصناعات بالعاشر من رمضان",
-      ],
-      image: project4,
-    },
-    {
-      name: ["Alnil Schools ElSheikh Zayed", "مدارس النيل بالشيخ زايد"],
-      image: project5,
-    },
-    { name: ["Youth Center AlSadat", "مركز شباب السادات"], image: project6 },
-  ];
-
-  // const { projects, currentIndex } = useSelector((state) => state.projects);
 
   createEffect(() => {
     if (isEnglish()) {
@@ -73,7 +36,7 @@ const AboutCompany = () => {
     <div
       id="about-company"
       className="about-company"
-      style={{ backgroundImage: `url(${logo})` }}
+      style={{ "background-image": `url(${logo})` }}
     >
       <div className="section-title">
         <p>{isEnglish() ? text.aboutCompany[0] : text.aboutCompany[1]}</p>
@@ -81,7 +44,9 @@ const AboutCompany = () => {
       <div className="cards-container">
         <div
           className="card"
-          style={{ backgroundImage: `url(${projects[0].image})` }}
+          style={{
+            "background-image": `url(${projects()[currentIndex()].image})`,
+          }}
         ></div>
         <div className="card text">
           <h2>
@@ -103,7 +68,9 @@ const AboutCompany = () => {
         </div>
         <div
           className="card third"
-          style={{ backgroundImage: `url(${projects[0].image})` }}
+          style={{
+            "background-image": `url(${projects()[currentIndex()].image})`,
+          }}
         ></div>
       </div>
     </div>
